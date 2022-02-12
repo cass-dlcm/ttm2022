@@ -36,13 +36,13 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     """Database model for users in the system"""
     email = models.EmailField(max_length=255, unique=True)
     birthday = models.DateField(auto_now=False, null=True, blank=True)
+    password = models.CharField(max_length=64)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
     objects = UserProfileSuperUser()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELD = ['email', 'birthday']
 
     def ___str___(self):
         return self.email

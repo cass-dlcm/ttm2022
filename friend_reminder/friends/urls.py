@@ -16,6 +16,7 @@ Including another URLconf
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
+from . import views
 from .views import ContactViewSet, UserViewSet, ContactCategoryViewSet
 
 router = DefaultRouter()
@@ -25,4 +26,6 @@ router.register(r'contact_categories', ContactCategoryViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('sign-up/', views.signUp),
+    path('sign-in/', views.signIn)
 ]
