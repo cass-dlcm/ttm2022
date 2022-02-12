@@ -67,3 +67,6 @@ class Contact(models.Model):
     next_contact_date = models.DateTimeField()
     most_recent_prompt_date = models.DateTimeField(null=True, blank=True)
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+

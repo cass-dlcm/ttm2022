@@ -10,6 +10,8 @@ class UserProfileSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ContactSerializer(serializers.HyperlinkedModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.email')
+
     class Meta:
         model = Contact
-        fields = ['url', 'name', 'category', 'picture', 'next_contact_date', 'most_recent_prompt_date']
+        fields = ['url', 'name', 'category', 'picture', 'next_contact_date', 'most_recent_prompt_date', 'owner']
