@@ -55,8 +55,12 @@ class AvailableContactTime(models.Model):
 
 class ContactCategory(models.Model):
     user = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
     min_contact_days = models.PositiveIntegerField()
     max_contact_days = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.name
 
 
 class Contact(models.Model):
@@ -67,6 +71,6 @@ class Contact(models.Model):
     next_contact_date = models.DateTimeField()
     most_recent_prompt_date = models.DateTimeField(null=True, blank=True)
 
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
+    def __str__(self):
+        return self.name
 
