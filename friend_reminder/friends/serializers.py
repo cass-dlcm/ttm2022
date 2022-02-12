@@ -1,11 +1,11 @@
 from rest_framework import serializers
 
-from .models import CustomUser, Contact
+from .models import UserProfile, Contact
 
 
-class CustomUserSerializer(serializers.HyperlinkedModelSerializer):
+class UserProfileSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = CustomUser
+        model = UserProfile
         fields = ['url', 'email']
 
 
