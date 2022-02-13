@@ -1,18 +1,18 @@
 import {Link} from "react-router-dom";
 import React, { Component } from 'react';
-import './Dashboard.css';
+import './Onboard.css';
 
-export default function Dashboard() {
+export default function Onboard() {
     return (
-        <div className="Dashboard">
+        <div className="Onboard">
             <h1 className="title">
                 <img src="public/logo_1.png" alt=""/>
                 <a className="title-text" href="/">Catch Up</a>
             </h1>
             <h1 id="first">Hi Name</h1>
-            <h2 id="second">Catch up with a tap</h2>
+            <h2 id="second">Let's add your first contact to keep up with and begin your journey with Catch Up.</h2>
             <div className="button">
-                <a href="/get-started"><button id="get-started">Get Started</button></a>
+                <a href="/onboard-2"><button id="onboard">Begin</button></a>
             </div>
         </div>
     );

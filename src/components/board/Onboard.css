@@ -1,0 +1,15 @@
+#second {
+    font-size: 15px;
+}
+
+#onboard {
+    text-align: center;
+    font-size: 25px;
+    margin: 15px 15px;
+    color: #3f3f6d;
+    background-color: #3f3f6d;
+    color: #fdfdfd;
+    border-radius: 8px;
+    width: 250px;
+    height: 50px;
+}
