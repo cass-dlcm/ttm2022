@@ -1,0 +1,9 @@
+#fav-text {
+    margin: 5px;
+    width: 550px;
+    height: 550px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FDFDFD;
+    font-weight: bold;
+}

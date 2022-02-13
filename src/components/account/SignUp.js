@@ -33,7 +33,9 @@ export default function SignUp() {
                 <input type="checkbox" id="consent" name="scales" /> 
                 <label for="scales">I consent to receive emails regarding my schedules and notifications from Catch Up.</label>
             </div>
-            <button id="su-btn" type="sign-up" class="btn btn-primary">CREATE ACCOUNT</button>
+            <div className="button">
+                <a href="/onboard"><button id="su-btn">CREATE ACCOUNT</button></a>
+            </div>
         </div>
     );
 }
