@@ -1,0 +1,12 @@
+.title {
+	background-color: #3f3f6d;
+	margin-top: 0;
+	margin-bottom: 15px;
+	font-size: 80px;
+}
+
+.title-text {
+	text-decoration: none;
+	color: #fdfdfd;
+	background-color: #3f3f6d;
+}

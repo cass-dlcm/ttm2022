@@ -1,0 +1,22 @@
+.NavBarDark .navbar-dark-background-color {
+	background-color: #52528c;
+}
+.NavBarDark .navbar-brand {
+	color: white;
+	background-color: #52528c;
+	font-size: 31.25px;
+	font-family: Catamaran;
+	font-weight: 800;
+	text-align: left;
+}
+.NavBarDark a:hover {
+	color: white;
+}
+
+.NavBarDark a.nav-link {
+	color: white;
+	background-color: #52528c;
+}
+.NavBarDark ul {
+	background-color: #52528c;
+}
