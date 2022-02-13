@@ -10,4 +10,3 @@ admin.site.register(UserProfile, UserProfileAdmin)
 admin.site.register(AvailableContactTime)
 admin.site.register(ContactCategory)
 admin.site.register(Contact)
-

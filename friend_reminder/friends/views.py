@@ -1,5 +1,4 @@
 from http.client import HTTPResponse
-from rest_framework import generics, permissions, viewsets
 from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import make_password, check_password
 import random

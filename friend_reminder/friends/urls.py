@@ -16,9 +16,7 @@ Including another URLconf
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from .views import ContactViewSet, UserViewSet, ContactCategoryViewSet, AvailableContactTimeViewSet, sign_up, sign_in, \
-    dashboard
-
+from .views import ContactViewSet, UserViewSet, ContactCategoryViewSet, AvailableContactTimeViewSet, sign_up, sign_in, dashboard
 router = DefaultRouter()
 router.register(r'contacts', ContactViewSet)
 router.register(r'users', UserViewSet)
