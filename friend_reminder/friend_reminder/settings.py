@@ -25,9 +25,9 @@ load_dotenv()  # take environment variables from .env.
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG") == "True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.getenv("HOST")]
 
 # Application definition
 
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'friends.apps.FriendsConfig',
     'rest_framework',
+    'frontend.apps.FrontendConfig',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
