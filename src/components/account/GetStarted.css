@@ -1,0 +1,35 @@
+* {
+    background-color: #F8FBFF;
+    font-family: 'Catamaran', sans-serif;
+}
+
+
+.title {
+    background-color: #3F3F6D;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 80px;
+}
+
+.title-text {
+    text-decoration: none;
+    color: #FDFDFD;
+    background-color: #3F3F6D;
+}
+
+#first, #second {
+    margin: 0 15px;
+    color: #3F3F6D
+}
+
+#sign-up, #sign-in {
+    text-align: center;
+    font-size: 25px;
+    margin: 15px 15px;
+    color: #3F3F6D;
+    background-color: #3F3F6D;
+    color: #FDFDFD;
+    border-radius: 8px;
+    width: 250px;
+    height: 50px
+}
