@@ -16,7 +16,9 @@ Including another URLconf
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from .views import ContactViewSet, UserViewSet, ContactCategoryViewSet, AvailableContactTimeViewSet, sign_up, sign_in, dashboard
+from .views import ContactViewSet, UserViewSet, ContactCategoryViewSet, AvailableContactTimeViewSet, sign_up, sign_in, \
+    dashboard, password_reset_confirm, password_reset_request
+
 router = DefaultRouter()
 router.register(r'contacts', ContactViewSet)
 router.register(r'users', UserViewSet)
@@ -27,5 +29,8 @@ urlpatterns = [
     path('', include(router.urls)),
     path('', dashboard),
     path('sign-up/', sign_up),
-    path('sign-in/', sign_in)
+    path('sign-in/', sign_in),
+    path('password_reset_request', password_reset_request),
+    path('password_reset_confirm/<int:userid>/<int:token>', password_reset_confirm),
+    path('password_reset_confirm/<int:userid>/', password_reset_confirm),
 ]

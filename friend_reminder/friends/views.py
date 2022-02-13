@@ -1,13 +1,21 @@
+import os
+import sys
+from base64 import b64encode, b64decode, b16encode, b16decode
 from http.client import HTTPResponse
+
+from django.contrib.auth import login
+from django.core.mail import send_mail, EmailMultiAlternatives
 from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import make_password, check_password
 import random
-from datetime import datetime
+import datetime
 
 from django.contrib.auth.models import AnonymousUser
+from django.template.loader import render_to_string
+from pytz import timezone
 from rest_framework import viewsets
 
-from .models import UserProfile, Contact, ContactCategory, AvailableContactTime
+from .models import UserProfile, Contact, ContactCategory, AvailableContactTime, ResetToken
 from .permissions import IsOwner, IsSuperuser
 from .serializers import UserProfileSerializer, ContactSerializer, ContactCategorySerializer, \
     AvailableContactTimeSerializer
@@ -108,8 +116,8 @@ class ContactViewSet(CustomModelViewSet):
         next_contact_days = random.randint(
             ContactCategory.objects.get(id=int(self.request.data["category"].split("/")[-2])).min_contact_days,
             ContactCategory.objects.get(id=int(self.request.data["category"].split("/")[-2])).max_contact_days)
-        next_contact_date = datetime.now().replace(day=datetime.now().day + next_contact_days)
-        most_recent_prompt_date = datetime.now()
+        next_contact_date = datetime.datetime.now().replace(day=datetime.datetime.now().day + next_contact_days)
+        most_recent_prompt_date = datetime.datetime.now()
         serializer.save(user=self.request.user, next_contact_date=next_contact_date, most_recent_prompt_date=most_recent_prompt_date)
 
 
@@ -135,4 +143,60 @@ class AvailableContactTimeViewSet(CustomModelViewSet):
                 random_obj = result_set.get(id=pks[random_idx])
                 contact.next_contact_time = random_obj.start_time
                 contact.save(update_fields=["next_contact_time"])
-        serializer.save(user=self.request.user)
+        super().perform_create(serializer)
+
+
+def password_reset_request(request):
+    if request.method == 'GET':
+        return render(request, 'reset-request.html')
+    if request.method == 'POST':
+        email = request.POST.get('email', None)
+        res_data = {}
+        if email is None:
+            res_data['error'] = "please enter an email address"
+            return render(request, 'reset-request.html', res_data)
+        try:
+            user = UserProfile.objects.get(email=email)
+            token = ResetToken(user=user, value=int.from_bytes(os.urandom(4), "big"), expiry=datetime.datetime.now() + datetime.timedelta(minutes=10))
+            token.save()
+            print(token.value)
+            print(user.id)
+            print(token.expiry)
+            msg_plain = render_to_string('reset-email.txt', {'protocol': "http", 'domain': os.getenv("HOST"), 'uidb64': user.id, 'token': token.value})
+            msg = EmailMultiAlternatives("Catch Up - Password Reset", msg_plain, "CatchUp@cass-dlcm.dev", [email])
+            msg.attach_alternative(render_to_string('reset-email.html', {'protocol': "http", 'domain': os.getenv("host"), 'uidb64': user.id, 'token': token.value}), "text/html")
+            msg.send()
+            return render(request, 'reset-request.html')
+        except UserProfile.DoesNotExist:
+            res_data['error'] = "that email address is not associated with a user"
+            return render(request, 'reset-request.html', res_data)
+
+
+def password_reset_confirm(request, userid, token = None):
+    if request.method == 'GET':
+        try:
+            user = UserProfile.objects.get(id=userid)
+            try:
+                print(token)
+                dbtoken = user.tokens.get(value=token)
+                print(dbtoken.expiry)
+                if datetime.datetime.now().replace(tzinfo=timezone("utc")) > dbtoken.expiry:
+                    return redirect('/')
+                login(request, user)
+                dbtoken.delete()
+                return render(request, "reset-confirm.html")
+            except ResetToken.DoesNotExist:
+                return redirect('/')
+        except UserProfile.DoesNotExist:
+            return redirect('/')
+    if request.method == 'POST':
+        new_pass = request.POST.get("password", None)
+        new_pass_confirm = request.POST.get("re-password", None)
+        print(new_pass, new_pass_confirm)
+        if new_pass != new_pass_confirm:
+            return render(request, 'reset-confirm.html', {"error": "the passwords are not the same"})
+        if type(request.user) is AnonymousUser:
+            return render(request, 'reset-confirm.html', {"error": "please navigate to this page by using the link in the email"})
+        request.user.set_password(new_pass)
+        request.user.save()
+        return render(request, "reset-done.html")

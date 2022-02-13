@@ -48,6 +48,12 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
+class ResetToken(models.Model):
+    user = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE, related_name="tokens")
+    expiry = models.DateTimeField()
+    value = models.BigIntegerField()
+
+
 class AvailableContactTime(models.Model):
     user = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE)
     contact = models.ForeignKey(to='Contact', on_delete=models.SET_NULL, null=True)
