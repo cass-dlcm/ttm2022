@@ -17,12 +17,12 @@ export default function NavBar() {
 							Home
 						</a>
 					</li>
-					<li className="nav-item">
+					<li className="nav-item me-1">
 						<a className="nav-link" href="/mycatchups">
 							My Catch Ups
 						</a>
 					</li>
-					<li className="nav-item ms-1 me-1">
+					<li className="nav-item ms-1">
 						<a className="nav-link" href="/mycontacts">
 							My Contacts
 						</a>
