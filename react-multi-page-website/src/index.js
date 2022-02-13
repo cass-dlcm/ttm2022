@@ -15,7 +15,7 @@ import {
 	ContactMessage,
 	ContactNotes,
 	ContactType,
-	GetStarted,
+	ContactGetStarted,
 } from "./components";
 
 ReactDOM.render(
@@ -24,16 +24,14 @@ ReactDOM.render(
 		<Routes>
 			<Route path="/" element={<Home />} />
 			<Route path="/about" element={<About />} />
-			<Route path="/contact" element={<MyCatchUps />} />
-			<Route path="/contact" element={<MyContacts />} />
-			<Route path="/blog" element={<NewContact />}>
-				<Route path="" element={<ContactFrequency />} />
-				<Route path="" element={<ContactInfo />} />
-				<Route path="" element={<ContactMessage />} />
-				<Route path="" element={<ContactNotes />} />
-				<Route path="" element={<ContactType />} />
-				<Route path="" element={<GetStarted />} />
-			</Route>
+			<Route path="/mycatchups" element={<MyCatchUps />} />
+			<Route path="/mycontacts" element={<MyContacts />} />
+			<Route path="/contactfrequency" element={<ContactFrequency />} />
+			<Route path="/contactinfo" element={<ContactInfo />} />
+			<Route path="/contactmessage" element={<ContactMessage />} />
+			<Route path="/contactnotes" element={<ContactNotes />} />
+			<Route path="/contacttype" element={<ContactType />} />
+			<Route path="contactgetstarted" element={<ContactGetStarted />} />
 		</Routes>
 		<Footer />
 	</Router>,

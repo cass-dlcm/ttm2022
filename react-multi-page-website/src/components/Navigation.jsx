@@ -18,17 +18,17 @@ export default function Navigation() {
 								</NavLink>
 							</li>
 							<li className="nav-item">
-								<NavLink className="nav-link" to="/about">
+								<NavLink className="nav-link" to="/About">
 									About
 								</NavLink>
 							</li>
 							<li className="nav-item">
-								<NavLink className="nav-link" to="/contact">
+								<NavLink className="nav-link" to="/MyCatchUps">
 									My Catch Ups
 								</NavLink>
 							</li>
 							<li className="nav-item">
-								<NavLink className="nav-link" to="/blog">
+								<NavLink className="nav-link" to="/NewContact">
 									My Contacts
 								</NavLink>
 							</li>

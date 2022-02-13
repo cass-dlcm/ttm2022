@@ -5,9 +5,9 @@ export { default as About } from "./About";
 export { default as MyCatchUps } from "./MyCatchUps";
 export { default as MyContacts } from "./MyContacts";
 
-export { default as ContactFrequency } from "./NewContact/ContactFrequency";
-export { default as ContactInfo } from "./NewContact/ContactInfo";
-export { default as ContactMessage } from "./NewContact/ContactMessage";
-export { default as ContactNotes } from "./NewContact/ContactNotes";
-export { default as ContactType } from "./NewContact/ContactType";
-export { default as GetStarted } from "./NewContact/GetStarted";
+export { default as ContactFrequency } from "./ContactFrequency";
+export { default as ContactInfo } from "./ContactInfo";
+export { default as ContactMessage } from "./ContactMessage";
+export { default as ContactNotes } from "./ContactNotes";
+export { default as ContactType } from "./ContactType";
+export { default as ContactGetStarted } from "./ContactGetStarted";
