@@ -7,7 +7,7 @@ export default function NavBar() {
 		<div className="NavBarDark">
 			<nav class="navbar navbar-expand-lg navbar-dark-background-color">
 				<a className="navbar-brand d-flex" href="/">
-					<img src="./logo_light.png"></img>
+					<img src="./logo_rough_light.png" />
 					Catch Up
 				</a>
 
@@ -19,12 +19,12 @@ export default function NavBar() {
 					</li>
 					<li className="nav-item me-1">
 						<a className="nav-link" href="/mycatchups">
-							My Catch Ups
+							CatchUps
 						</a>
 					</li>
 					<li className="nav-item ms-1">
 						<a className="nav-link" href="/mycontacts">
-							My Contacts
+							Contacts
 						</a>
 					</li>
 				</ul>
