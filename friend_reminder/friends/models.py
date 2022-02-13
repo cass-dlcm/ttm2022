@@ -36,21 +36,29 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     """Database model for users in the system"""
     email = models.EmailField(max_length=255, unique=True)
     birthday = models.DateField(auto_now=False, null=True, blank=True)
+    password = models.CharField(max_length=64)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
     objects = UserProfileSuperUser()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELD = ['email', 'birthday']
 
-    def ___str___(self):
+    def __str__(self):
         return self.email
 
 
 class AvailableContactTime(models.Model):
     user = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE)
     contact = models.ForeignKey(to='Contact', on_delete=models.SET_NULL, null=True)
+    weekdays = (("M", "Monday"), ("Tu", "Tuesday"), ("W", "Wednesday"), ("Th", "Thursday"), ("F", "Friday"),
+                ("Sa", "Saturday"), ("Su", "Sunday"))
+    day_of_week = models.CharField(max_length=9, choices=weekdays)
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+
+    def __str__(self):
+        return f"{self.day_of_week}, from {self.start_time} to {self.end_time}"
 
 
 class ContactCategory(models.Model):
@@ -68,7 +76,8 @@ class Contact(models.Model):
     user = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     picture = models.ImageField(null=True, blank=True)
-    next_contact_date = models.DateTimeField()
+    next_contact_date = models.DateField()
+    next_contact_time = models.TimeField(null=True, blank=True)
     most_recent_prompt_date = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):

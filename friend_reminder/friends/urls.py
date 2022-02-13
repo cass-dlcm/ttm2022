@@ -16,13 +16,18 @@ Including another URLconf
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from .views import ContactViewSet, UserViewSet, ContactCategoryViewSet
+from .views import ContactViewSet, UserViewSet, ContactCategoryViewSet, AvailableContactTimeViewSet, sign_up, sign_in, \
+    dashboard
 
 router = DefaultRouter()
 router.register(r'contacts', ContactViewSet)
 router.register(r'users', UserViewSet)
 router.register(r'contact_categories', ContactCategoryViewSet)
+router.register(r'schedule', AvailableContactTimeViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('', dashboard),
+    path('sign-up/', sign_up),
+    path('sign-in/', sign_in)
 ]
