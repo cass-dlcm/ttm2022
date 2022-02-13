@@ -8,6 +8,7 @@
 	font-family: Catamaran;
 	font-weight: 800;
 	text-align: left;
+	text-decoration: none;
 }
 .NavBarDark a:hover {
 	color: white;
@@ -16,7 +17,10 @@
 .NavBarDark a.nav-link {
 	color: white;
 	background-color: #52528c;
+	text-decoration: none;
 }
 .NavBarDark ul {
 	background-color: #52528c;
+	list-style: none;
+	padding: 0;
 }

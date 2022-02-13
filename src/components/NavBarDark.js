@@ -11,13 +11,13 @@ export default function NavBar() {
 					Catch Up
 				</a>
 
-				<ul className="navbar-links navbar-nav d-flex flex-row justify-content-end ">
-					<li className="nav-item active  me-1">
+				<ul className="navbar-links navbar-nav d-flex flex-row justify-contents-end">
+					<li className="nav-item active me-1">
 						<a className="nav-link" href="/calendar">
 							Home
 						</a>
 					</li>
-					<li className="nav-item ms-1 me-1">
+					<li className="nav-item">
 						<a className="nav-link" href="/mycatchups">
 							My Catch Ups
 						</a>

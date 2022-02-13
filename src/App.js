@@ -11,8 +11,9 @@ import Onboard4 from "./components/board/Onboard4";
 import Onboard5 from "./components/board/Onboard5";
 import Onboard6 from "./components/board/Onboard6";
 import Onboard7 from "./components/board/Onboard7";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-
+import Calendar from "./components/dashboard-main/Calendar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
 	return (
@@ -30,6 +31,7 @@ export default function App() {
 				<Route path="/onboard-5" element={<Onboard5 />} />
 				<Route path="/onboard-6" element={<Onboard6 />} />
 				<Route path="/onboard-7" element={<Onboard7 />} />
+				<Route path="/calendar" element={<Calendar />} />
 			</Routes>
 		</BrowserRouter>
 	);
