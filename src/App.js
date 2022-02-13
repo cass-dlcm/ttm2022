@@ -18,7 +18,7 @@ import CatchUps3 from "./components/catch-ups/CatchUps3";
 import CatchUps4 from "./components/catch-ups/CatchUps4";
 import CatchUps5 from "./components/catch-ups/CatchUps5";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
 	return (

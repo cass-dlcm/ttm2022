@@ -1,13 +1,11 @@
 import {Link} from "react-router-dom";
+import NavBarDark from "../NavBarDark";
 import './ResetRequest.css';
 
 export default function ResetRequest() {
     return (
         <div className="reset-request">
-            <h1 className="sub-title">
-                <img src="public/logo_1.png" alt=""/>
-                <a className="sub-title-text" href="/">Catch Up</a>
-            </h1>
+            <NavBarDark />
             <div>
                 <h1 className="rr-title">Forgot your password?</h1>
                 <p id="rr-des">Enter your email address below, and we'll email instructions for setting a new one.</p>

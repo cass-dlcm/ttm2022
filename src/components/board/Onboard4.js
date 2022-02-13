@@ -1,14 +1,12 @@
 import {Link} from "react-router-dom";
 import React, { Component } from 'react';
+import NavBarDark from "../NavBarDark";
 import './Onboard4.css';
 
 export default function Onboard() {
     return (
         <div className="Onboard">
-            <h1 className="title">
-                <img src="public/logo_1.png" alt=""/>
-                <a className="title-text" href="/">Catch Up</a>
-            </h1>
+            <NavBarDark />
             <h1 id="first">How would you like to keep up with Mimi?</h1>
             <h2 id="second">Pick all of your preferred options.</h2>
             <div className="button4">

@@ -1,14 +1,12 @@
 import {Link} from "react-router-dom";
 import React, { Component } from 'react';
+import NavBarDark from "../NavBarDark";
 import './CatchUps3.css';
 
 export default function CatchUps3() {
     return (
         <div className="catch-ups-3">
-            <h1 className="title">
-                <img src="public/logo_1.png" alt=""/>
-                <a className="title-text" href="/">Catch Up</a>
-            </h1>
+            <NavBarDark />
             <div className="button">
                 <a href="/catch-ups-2"><button id="contact-back">Back</button></a>
             </div>

@@ -1,14 +1,12 @@
 import {Link} from "react-router-dom";
 import React, { Component } from 'react';
+import NavBarDark from "../NavBarDark";
 import './Onboard2.css';
 
 export default function Onboard2a() {
     return (
         <div className="Onboard2a">
-            <h1 className="title">
-                <img src="public/logo_1.png" alt=""/>
-                <a className="title-text" href="/">Catch Up</a>
-            </h1>
+            <NavBarDark />
             <h1 id="first">Let's started with your contact's info</h1>
             <div className="form-group">
                 <input type="text" class="form-control" id="nickname" placeholder="Nickname" name="nickname" />

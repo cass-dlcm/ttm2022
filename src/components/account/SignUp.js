@@ -1,15 +1,12 @@
 import {Link} from "react-router-dom";
+import NavBarDark from "../NavBarDark";
 import './SignUp.css';
 
 export default function SignUp() {
     
     return (
         <div className="sign-up">
-            <h1 className="sub-title">
-                <img src="public/logo_1.png" alt=""/>
-                <a className="sub-title-text" href="/">Catch Up</a>
-                <a id="su-a" href="/sign-in"><button id="su-sign-in">Sign in</button></a>
-            </h1>
+            <NavBarDark />
             <h1 className="su-title">Welcome to Catch Up!</h1>
             <div class="form-group">
                 <input type="email" class="form-control" id="email" placeholder="Email Address" name="email" />

@@ -1,13 +1,11 @@
 import {Link} from "react-router-dom";
+import NavBarDark from "../NavBarDark";
 import './SignIn.css';
 
 export default function SignIn() {
     return (
         <div className="sign-in">
-            <h1 className="sub-title">
-                <img src="public/logo_1.png" alt=""/>
-                <a className="sub-title-text" href="/">Catch Up</a>
-            </h1>
+            <NavBarDark />
             <h1 className="si-title">Welcome back!</h1>
             <div className="form-group">
                 <input type="email" class="form-control" id="email" placeholder="Email Address" name="email" />
@@ -15,7 +13,9 @@ export default function SignIn() {
             <div className="form-group">
                 <input type="password" class="form-control" id="password" placeholder="Password" name="password" />
             </div>
-            <button id="si-btn" type="sign-in" class="btn btn-primary">Sign In</button>
+            <div className="button">
+                <a href="/onboard"><button id="su-btn">SIGN IN</button></a>
+            </div>
             <div className="reset-link"><a href="/reset-request">Forgot my password</a></div>
         </div>
     );
