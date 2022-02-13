@@ -1,13 +1,20 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+// App.js
+import Home from "./components/Home";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import ResetRequest from "./components/ResetRequest";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+
 
 export default function App() {
 	return (
-		<div className="App">
-			<div className="container">
-				<h1> Hello from React</h1>
-				<button className="btn btn-primary">Submit</button>
-			</div>
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route exact path="/" element={<Home />} />
+				<Route path="/sign-in" element={<SignIn />} />
+				<Route path="/sign-up" element={<SignUp />} />
+				<Route path="/reset-request" element={<ResetRequest />} />
+			</Routes>
+		</BrowserRouter>
 	);
 }
