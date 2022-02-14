@@ -1,5 +1,5 @@
 # TechTogether Miami Hackathon - Catch Up Web App #
-
+Smart Reminders for Deeper connections. Send notification to catch up with family and friends. Suggestion conversation topics and call duration. Check-up calls are never easier.
 
 ## **Inspiration**
 
