@@ -1,7 +1,7 @@
 # TechTogether Miami Hackathon - Catch Up Web App #
 
 
-## **Inspiration:**
+## **Inspiration**
 
 We found that any friends or family that we living far away it was hard to remember to catch up with them. This is app to help remind you to catch up.
 
