@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# TechTogether Miami Hackathon - Catch Up Web App #
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## **Inspiration:**
 
-In the project directory, you can run:
+We found that any friends or family that we living far away it was hard to remember to catch up with them. This is app to help remind you to catch up.
 
-### `npm start`
+## **What it does**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You add your contacts and preference for frequency of catchup and the app helps to remind you and manage your catchups.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **How we built it**
 
-### `npm test`
+We brainstormed together, conducted user interviews to figure out features, created sitemaps and feature ideas then divided into three groups: Front-End, Back-End, and Design to finish the project.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **More Details**
+- [devpost](https://devpost.com/software/abc-utgh2q?ref_content=my-projects-tab&ref_feature=my_projects)
 
-### `npm run build`
+## **Challenges we ran into**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Time constraint
+- Front end needs more time
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## **Accomplishments that we're proud of**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Great idea for an app the is useful and helping to solve a personal problem.
+- Able to figure out how multiple pages in react works and use it to navigate through the app.
+- Decently working main features
+- Comprehensive prototypes
 
-### `npm run eject`
+## **What's next for Catch Up App**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Implement leftover features
+- Clean up UI design
+- Better authentication for user login
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
